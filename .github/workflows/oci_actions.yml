@@ -25,12 +25,13 @@ jobs:
       - name: View deploy arguments
         id: view-value
         run: |
-          echo "user ID is $OCI_CLI_USER"
-      - name: Log into OCIR
-        uses: oracle-actions/login-ocir@v1.3.0
-        id: login-ocir
-        with:
-          auth_token: ${{ secrets.OCI_AUTH_TOKEN }}
+          docker login iad.ocir.io --username=sehubjapaciaas/oracleidentitycloudservice/sunil.suseelan@oracle.com --password=".wWPSdlN1M8.uvs:L;tv"
+          
+      # - name: Log into OCIR
+      #   uses: oracle-actions/login-ocir@v1.3.0
+      #   id: login-ocir
+      #   with:
+      #     auth_token: ${{ secrets.OCI_AUTH_TOKEN }}
 
       - name: Tag and push a container image
         id: tag-and-push-image
